@@ -1,0 +1,12 @@
+/:
+  controller: Default
+  action: default
+
+
+/ajout-utilisateur:
+  controller: User
+  action: add
+
+/liste-des-utilisateurs:
+  controller: User
+  action: list

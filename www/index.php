@@ -2,53 +2,45 @@
 
 $uri = $_SERVER["REQUEST_URI"];
 
-// $uri = /	
-// $uri = /user/add
-$uri = trim($uri, "/");
-// $uri = 
-// $uri = user/add
-$uriExploded = explode("/", $uri);
-//$uriExploded = ["user", "add"];
 
-$c = (empty($uriExploded[0]))
-			?"default"
-			:$uriExploded[0] ; 
-			//Par defaut on doit avoir default
-$c = $c."Controller";
+$listOfRoutes = yaml_parse_file("routes.yml");
 
-$a = (empty($uriExploded[1]))
-			?"default"
-			:$uriExploded[1] ; 
-			//Par defaut on doit avoir default
-$a = $a."Action";
+if( !empty($listOfRoutes[$uri]) ){
 
-//echo "Le controller c'est ".$c." et l'action c'est ".$a;
+	$c = $listOfRoutes[$uri]["controller"]."Controller";
+	$a = $listOfRoutes[$uri]["action"]."Action";
+
+	//Est ce que dans le dossier controller il y a une class
+	//qui correspond à $c
+	if( file_exists("controllers/".$c.".class.php") ){
+
+		include "controllers/".$c.".class.php";
+		if( class_exists($c)){
+
+			$controller = new $c();
+			if( method_exists($controller, $a)){
+
+				$controller->$a();
+				
+			}else{
+				die("L'action' n'existe pas");
+			}
 
 
-//Est ce que dans le dossier controller il y a une class
-//qui correspond à $c
-if( file_exists("controllers/".$c.".class.php") ){
-
-	include "controllers/".$c.".class.php";
-	if( class_exists($c)){
-
-		$controller = new $c();
-		if( method_exists($controller, $a)){
-
-			$controller->$a();
-			
 		}else{
-			die("L'action' n'existe pas");
+
+			die("Le class controller n'existe pas");
 		}
 
-
 	}else{
-
-		die("Le class controller n'existe pas");
+		die("Le fichier du controller n'existe pas : controllers/".$c.".class.php");
 	}
 
+
+
 }else{
-	die("Le fichier du controller n'existe pas : controllers/".$c."Controller.class.php");
+
+	die("L'url n'existe pas : Erreur 404");
 }
 
 
@@ -56,3 +48,8 @@ if( file_exists("controllers/".$c.".class.php") ){
 
 
 
+
+
+
+
+	

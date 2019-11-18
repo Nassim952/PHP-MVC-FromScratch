@@ -9,4 +9,9 @@ class UserController{
 		echo "Action add dans le controller user";	
 	}
 	
+
+	public function listAction(){
+		echo "Félicitations vous avez compris !!!";
+	}
+
 }
