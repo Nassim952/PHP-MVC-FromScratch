@@ -1,5 +1,15 @@
 <?php
 
+
+function myAutoload($class){
+	if("core/".$class.".class.php"){
+		include "core/".$class.".class.php";
+	}
+}
+
+spl_autoload_register("myAutoload");
+
+
 $uri = $_SERVER["REQUEST_URI"];
 
 
