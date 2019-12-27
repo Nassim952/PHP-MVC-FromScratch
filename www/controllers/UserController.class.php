@@ -1,17 +1,24 @@
 <?php
 class UserController{
-
-	public function defaultAction(){
-		echo "Action default dans le controller user";
+	public function loginAction(){
+		$myView = new View("login", "account");
 	}
 
-	public function addAction(){
-		echo "Action add dans le controller user";	
-	}
-	
+	public function registerAction(){
+		
+		$user = new users();
+		
+		$user->setId(1);
+		$user->setEmail("nasfahdine@gmail.com");
+		$user->setPwd("toto");
 
-	public function listAction(){
-		echo "Félicitations vous avez compris !!!";
+		$user->save();
+
+		$myView = new View("register", "account");
+
 	}
 
+	public function forgetPwdAction(){
+		$myView = new View("forgetPwd", "account");
+	}
 }
