@@ -15,7 +15,6 @@ new ConstLoader();
 
 $uri = $_SERVER["REQUEST_URI"];
 
-
 $listOfRoutes = yaml_parse_file("routes.yml");
 
 if( !empty($listOfRoutes[$uri]) ){

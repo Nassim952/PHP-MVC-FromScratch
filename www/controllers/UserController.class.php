@@ -8,9 +8,11 @@ class UserController{
 		
 		$user = new users();
 		
-		$user->setId(1);
+		$user->setFirstName("nassim");
+		$user->setLastName("mmadi");
 		$user->setEmail("nasfahdine@gmail.com");
-		$user->setPwd("toto");
+		$user->setPwd("password");
+		$user->setStatus(0);
 
 		$user->save();
 

@@ -1,6 +1,6 @@
 <?php 
 class users extends DB{
-    protected $id=1;
+    protected $id=null;
     protected $firstname;    
     protected $lastname;
     protected $email;

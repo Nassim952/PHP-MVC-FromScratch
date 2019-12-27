@@ -1,1 +1,6 @@
 PREFIXE_DB=dev_
+DRIVER_DB=mysql
+NAME_DB=mvcdocker_dev
+USER_DB=root
+PWD_DB=password
+HOST_DB=database
