@@ -12,15 +12,13 @@ class UserController{
 			$error = Validator::formValidate($configForm, $_POST);
 		}
 
-		
-		
 		$user = new users();
 		
-		$user->setFirstName("toto");
-		$user->setLastName("tata");
-		$user->setEmail("test@gmail.com");
-		$user->setPwd("password");
-		$user->setStatus(0);
+		$user->setFirstName("john");
+		$user->setLastName("doe");
+		$user->setEmail("john.doe@gmail.com");
+		$user->setPwd("anonymous");
+		$user->setStatus(1);
 
 		$user->save();
 

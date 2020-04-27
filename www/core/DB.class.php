@@ -15,17 +15,12 @@ class DB{
     public function save(){
         //retrieve properties of $this
         $objectVars = get_object_vars($this);
-        echo "object vars \n";
-        print_r($objectVars);
 
         //retrieve properties of current class
         $classVars = get_class_vars(get_class());
-        echo "class vars \n";
-        print_r($classVars);
 
         //compare two array var and remove excess keys
         $columnsData = array_diff_key($objectVars, $classVars);
-        echo "columnsData \n";
         print_r($columnsData);
 
         //set only keys from columnsData to columns

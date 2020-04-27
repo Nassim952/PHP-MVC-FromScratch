@@ -7,8 +7,23 @@ class users extends DB{
     protected $pwd;
     protected $status;
 
-    public function __construct(){
+    public function __construct($valeurs = array()){
         parent::__construct();
+
+        if(isset($valeurs)){
+            $this->hydrate($valeurs);
+        }
+    }
+
+    public function hydrate(array $donnees){
+        foreach ($donnees as $key => $value){
+            // permet de mettre une majuscule a la 1ere lettre de chaque clé (correspondance nom méthodes)
+            $method = 'set'.ucfirst($key);
+            
+            if(method_exists($this, $method)){
+                $this->$method($value);
+            }
+        }
     }
 
     public function setId($id){
