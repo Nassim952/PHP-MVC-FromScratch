@@ -1,4 +1,7 @@
 <?php
+
+namespace mvc\core;
+
 class ConstLoader{
 
     private $extend;

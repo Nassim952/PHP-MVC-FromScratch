@@ -1,4 +1,7 @@
 <?php
+
+namespace mvc\controllers;
+
 class HomeController{
     public function buttonsAction(){
 		$myView = new View("buttons");

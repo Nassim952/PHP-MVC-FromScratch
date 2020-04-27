@@ -1,4 +1,7 @@
 <?php
+
+namespace mvc\core;
+
 class DB{
     private $table;
     private $pdo;

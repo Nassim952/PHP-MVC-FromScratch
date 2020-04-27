@@ -1,5 +1,7 @@
 <?php
 
+namespace mvc\core;
+
 class helpers{
 	
 	public static function getUrl($controller, $action)

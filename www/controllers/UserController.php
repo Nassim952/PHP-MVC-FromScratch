@@ -1,4 +1,10 @@
 <?php
+
+namespace mvc\controllers;
+
+use mvc\models\users;
+use mvc\core\View;
+
 class UserController{
 	public function loginAction(){
 		$myView = new View("login", "account");

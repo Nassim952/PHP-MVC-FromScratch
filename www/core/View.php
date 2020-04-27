@@ -1,4 +1,7 @@
 <?php
+
+namespace mvc\core;
+
 class View{
 
 	private $view;
@@ -17,7 +20,6 @@ class View{
 		if( !file_exists("views/templates/".$this->template.".tpl.php")){
 			die("Le template n'existe pas");
 		}
-
 	}
 
 	//redéfini la propriété avec la variable view récupérée via le controleur
