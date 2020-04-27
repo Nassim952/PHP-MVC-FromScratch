@@ -5,19 +5,27 @@ class UserController{
 	}
 
 	public function registerAction(){
+
+		$configForm = users::getRegisterForm();
+
+		if($_SERVER["REQUEST_METHOD"] == "POST"){
+			$error = Validator::formValidate($configForm, $_POST);
+		}
+
+		
 		
 		$user = new users();
 		
-		$user->setFirstName("nassim");
-		$user->setLastName("mmadi");
-		$user->setEmail("nasfahdine@gmail.com");
+		$user->setFirstName("toto");
+		$user->setLastName("tata");
+		$user->setEmail("test@gmail.com");
 		$user->setPwd("password");
 		$user->setStatus(0);
 
 		$user->save();
 
 		$myView = new View("register", "account");
-
+		$myView->assign("configForm",$configForm);
 	}
 
 	public function forgetPwdAction(){

@@ -29,7 +29,7 @@ class View{
 		}
 	}
 
-	// jsplu ce que ça fait
+	// envoie les donnée à la vue
 	public function assign($key, $value){
 		$this->data[$key] = $value;
 	}

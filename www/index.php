@@ -46,5 +46,5 @@ if( !empty($listOfRoutes[$uri]) ){
 	}
 
 }else{
-	include "views/404.php";
+	// include "views/404.php";
 }
