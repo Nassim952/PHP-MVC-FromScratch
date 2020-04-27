@@ -24,9 +24,10 @@ class UserController{
 		$user->setLastName("doe");
 		$user->setEmail("john.doe@gmail.com");
 		$user->setPwd("anonymous");
-		$user->setStatus(1);
+		$user->setStatus(0);
 
 		$user->save();
+		// $user->count();
 
 		$myView = new View("register", "account");
 		$myView->assign("configForm",$configForm);

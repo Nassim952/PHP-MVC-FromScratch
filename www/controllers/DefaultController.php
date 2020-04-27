@@ -2,6 +2,8 @@
 
 namespace mvc\controllers;
 
+use mvc\core\View;
+
 class DefaultController{
 	public function defaultAction()
 	{

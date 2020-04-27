@@ -41,7 +41,7 @@
 
 	<!-- Nav Item - Dashboard -->
 	<li class="nav-item active">
-	<a class="nav-link" href="<?= helpers::getUrl("Home", "default") ?>">
+	<a class="nav-link" href="<?= \mvc\core\Helpers::getUrl("Home", "default") ?>">
 		<i class="fas fa-fw fa-tachometer-alt"></i>
 		<span>Dashboard</span></a>
 	</li>
@@ -63,8 +63,8 @@
 	<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 		<div class="bg-white py-2 collapse-inner rounded">
 		<h6 class="collapse-header">Custom Components:</h6>
-		<a class="collapse-item" href="<?= helpers::getUrl("Home", "buttons") ?>">Buttons</a>
-		<a class="collapse-item" href="<?= helpers::getUrl("Home", "cards") ?>">Cards</a>
+		<a class="collapse-item" href="<?= \mvc\core\Helpers::getUrl("Home", "buttons") ?>">Buttons</a>
+		<a class="collapse-item" href="<?= \mvc\core\Helpers::getUrl("Home", "cards") ?>">Cards</a>
 		</div>
 	</div>
 	</li>
@@ -78,10 +78,10 @@
 	<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 		<div class="bg-white py-2 collapse-inner rounded">
 		<h6 class="collapse-header">Custom Utilities:</h6>
-		<a class="collapse-item" href="<?= helpers::getUrl("Home", "colors") ?>">Colors</a>
-		<a class="collapse-item" href="<?= helpers::getUrl("Home", "border") ?>">Borders</a>
+		<a class="collapse-item" href="<?= \mvc\core\Helpers::getUrl("Home", "colors") ?>">Colors</a>
+		<a class="collapse-item" href="<?= \mvc\core\Helpers::getUrl("Home", "border") ?>">Borders</a>
 		<a class="collapse-item" href="utilities-animation.html">Animations</a>
-		<a class="collapse-item" href="<?= helpers::getUrl("Home", "other") ?>">Other</a>
+		<a class="collapse-item" href="<?= \mvc\core\Helpers::getUrl("Home", "other") ?>">Other</a>
 		</div>
 	</div>
 	</li>
@@ -103,9 +103,9 @@
 	<div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 		<div class="bg-white py-2 collapse-inner rounded">
 		<h6 class="collapse-header">Login Screens:</h6>
-		<a class="collapse-item" href="<?= helpers::getUrl("User", "login") ?>">Login</a>
-		<a class="collapse-item" href="<?= helpers::getUrl("User", "register") ?>">Register</a>
-		<a class="collapse-item" href="<?= helpers::getUrl("User", "forgetPwd") ?>">Forgot Password</a>
+		<a class="collapse-item" href="<?= \mvc\core\Helpers::getUrl("User", "login") ?>">Login</a>
+		<a class="collapse-item" href="<?= \mvc\core\Helpers::getUrl("User", "register") ?>">Register</a>
+		<a class="collapse-item" href="<?= \mvc\core\Helpers::getUrl("User", "forgetPwd") ?>">Forgot Password</a>
 		<div class="collapse-divider"></div>
 		<h6 class="collapse-header">Other Pages:</h6>
 		<a class="collapse-item" href="404.html">404 Page</a>
@@ -116,14 +116,14 @@
 
 	<!-- Nav Item - Charts -->
 	<li class="nav-item">
-	<a class="nav-link" href="<?= helpers::getUrl("Home", "charts") ?>">
+	<a class="nav-link" href="<?= \mvc\core\Helpers::getUrl("Home", "charts") ?>">
 		<i class="fas fa-fw fa-chart-area"></i>
 		<span>Charts</span></a>
 	</li>
 
 	<!-- Nav Item - Tables -->
 	<li class="nav-item">
-	<a class="nav-link" href="<?= helpers::getUrl("Home", "table") ?>">
+	<a class="nav-link" href="<?= \mvc\core\Helpers::getUrl("Home", "table") ?>">
 		<i class="fas fa-fw fa-table"></i>
 		<span>Tables</span></a>
 	</li>

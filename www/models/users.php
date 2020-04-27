@@ -1,4 +1,9 @@
 <?php 
+
+namespace mvc\models;
+
+use mvc\core\DB;
+
 class users extends DB{
     protected $id=null;
     protected $firstname;    
@@ -53,7 +58,7 @@ class users extends DB{
         return [
                     "config"=>[
                                 "method"=>"POST", 
-                                "action"=>helpers::getUrl("User", "register"),
+                                "action"=>\mvc\core\Helpers::getUrl("User", "register"),
                                 "class"=>"",
                                 "id"=>"",
                                 "submit"=>"S'inscrire"

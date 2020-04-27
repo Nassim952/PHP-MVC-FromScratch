@@ -2,7 +2,7 @@
 
 namespace mvc\core;
 
-class helpers{
+class Helpers{
 	
 	public static function getUrl($controller, $action)
 	{

@@ -2,6 +2,8 @@
 
 namespace mvc\core;
 
+use PDO;
+
 class DB{
     private $table;
     private $pdo;
@@ -13,6 +15,30 @@ class DB{
             die("error sql : ".$e->getMessage());
         }
         $this->table = PREFIXE_DB.get_called_class();
+        $cleanTable = str_replace('mvc\models\users', 'users', $this->table);
+        $this->table = $cleanTable;
+    }
+
+    public function findId($id){
+        $sql="select * from ".$this->table."where id = ".$id;
+
+        $queryPrepared = $this->pdo->prepare($sql);
+        $queryPrepared->execute();
+
+        $result = $queryPrepared->fetchAll();
+
+        $user = new users($result);
+    }
+
+    public function count(){
+        $sql="select * from ".$this->table;
+
+        $queryPrepared = $this->pdo->prepare($sql);
+        $queryPrepared->execute();
+
+        $result = $queryPrepared->fetchAll();
+
+        print_r($result);
     }
 
     public function save(){
@@ -24,7 +50,6 @@ class DB{
 
         //compare two array var and remove excess keys
         $columnsData = array_diff_key($objectVars, $classVars);
-        print_r($columnsData);
 
         //set only keys from columnsData to columns
         $columns = array_keys($columnsData);
