@@ -2,6 +2,7 @@
 
 namespace mvc\core;
 
+use mvc\models\users;
 use PDO;
 
 class DB{
@@ -63,7 +64,6 @@ class DB{
             $queryPrepared->execute();
 
             $result = $queryPrepared->fetchAll();
-            // print_r($result);
             
             if ($result == null){
                 //reset column ID auto_increment at 0
@@ -78,7 +78,6 @@ class DB{
             }else {
                 //INSERT
                 $sql = "INSERT INTO ".$this->table." (".implode(", ", $columns).") VALUES (:".implode(", :", $columns).");";
-                echo $sql;
                 $queryPrepared = $this->pdo->prepare($sql);
                 $queryPrepared->execute($columnsData);
             }
