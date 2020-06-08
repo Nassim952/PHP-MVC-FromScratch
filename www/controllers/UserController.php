@@ -2,8 +2,11 @@
 
 namespace mvc\controllers;
 
+use mvc\core\QueryBuilder;
 use mvc\models\users;
 use mvc\core\View;
+use mvc\core\Validator;
+use mvc\managers\PostManager;
 
 class UserController{
 	public function loginAction(){
@@ -20,17 +23,22 @@ class UserController{
 
 		$user = new users();
 		
-		$user->setFirstName("john");
-		$user->setLastName("doe");
-		$user->setEmail("john.doe@gmail.com");
-		$user->setPwd("anonymous");
+		$user->setId(11);
+		$user->setFirstName("cristiano");
+		$user->setLastName("ronaldo");
+		$user->setEmail("cristiano.ronaldo@gmail.com");
+		$user->setPwd("juve");
 		$user->setStatus(0);
 
-		$user->save();
-		// $user->count();
+		// $user->save();
+		// $user->findId(2);
 
-		$myView = new View("register", "account");
-		$myView->assign("configForm",$configForm);
+		// $myView = new View("register", "account");
+		// $myView->assign("configForm",$configForm);
+
+		$postManager = new PostManager();
+		$result = $postManager->getUserPost(11);
+		print_r($result);
 	}
 
 	public function forgetPwdAction(){

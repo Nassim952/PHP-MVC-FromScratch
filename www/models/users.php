@@ -38,6 +38,7 @@ class users extends DB{
     public function setFirstName($firstname){
         $this->firstname = ucwords(strtolower(trim($firstname)));
     }
+    
     public function setLastName($lastname){
         $this->lastname = strtoupper(trim($lastname));
     }

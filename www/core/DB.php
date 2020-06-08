@@ -21,18 +21,41 @@ class DB{
     }
 
     public function findId($id){
-        $sql="select * from ".$this->table."where id = ".$id;
+        $sql="select * from ".$this->table." where id = ".$id;
 
         $queryPrepared = $this->pdo->prepare($sql);
         $queryPrepared->execute();
 
         $result = $queryPrepared->fetchAll();
 
-        $user = new users($result);
+        if($result){
+            $object = new users();
+            return $object->hydrate($result);
+        }
+        else{
+            return null;
+        }
+    }
+
+    public function delete($id){
+        $sql="delete from ".$this->table." where id = ".$id;
+
+        $queryPrepared = $this->pdo->prepare($sql);
+        $queryPrepared->execute();
+    }
+
+    public function findAll(){
+        $sql="select * from ".$this->table;
+
+        $queryPrepared = $this->pdo->prepare($sql);
+        $queryPrepared->execute();
+
+        $result = $queryPrepared->fetchAll();   
+        print_r($result);
     }
 
     public function count(){
-        $sql="select * from ".$this->table;
+        $sql="select count(*) from ".$this->table;
 
         $queryPrepared = $this->pdo->prepare($sql);
         $queryPrepared->execute();

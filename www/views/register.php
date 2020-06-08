@@ -14,7 +14,7 @@
             </div>
 
 
-            <?php $this->addModal("form", $configForm)?>
+            <!-- php $this->addModal("form", $configForm) -->
 
 
 
